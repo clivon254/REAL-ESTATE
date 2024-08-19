@@ -30,8 +30,6 @@ app.use(cookieParser())
 app.use(bodyParser.json())
 
 
-
-
 // DB CONECTION
 mongoose.connect(process.env.MONGO)
 .then(() => {
@@ -39,6 +37,14 @@ mongoose.connect(process.env.MONGO)
  })
 .catch((err) => {
     console.log(err)
+})
+
+
+// API
+app.get('/',(req,res) => {
+
+    res.send("HELLO REAL ESTATE PEOPLE")
+
 })
 
 
@@ -61,13 +67,6 @@ app.get('*', (req, res) => {
   
 })
 
-
-// API
-app.get('/',(req,res) => {
-
-    res.send("HELLO REAL ESTATE PEOPLE")
-
-})
 
 
 
