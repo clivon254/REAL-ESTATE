@@ -17,6 +17,8 @@ const app = express()
 const PORT = process.env.PORT ;
 
 
+const __dirname = path.resolve();
+
 
 // middleweare
 app.use(cors())
@@ -61,11 +63,20 @@ app.get('/',(req,res) => {
 
 
 
-
-// APP LISTENING
+//  LISTENING
 app.listen(PORT , () => {
 
     console.log(`server is running on ${PORT}`)
+
+})
+
+
+app.use(express.static(path.join(__dirname ,'/client/dist')))
+
+
+app.get('*',(req,res) => {
+
+    res.sendFile(path.join(__dirname,'client','dist','index.html'))
 
 })
 
