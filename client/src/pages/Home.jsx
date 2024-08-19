@@ -204,7 +204,7 @@ export default function Home() {
 
             <div className="my-3">
 
-              <h2 className="text-2xl font-semibold text-slate-600">Recent places for sale</h2>
+              <h2 className="text-2xl font-semibold text-slate-600">Recent place for sale</h2>
 
               <Link className="text-sm text-blue-800 hover:underline" to={'/search?offer=true'}>
                 show more offers
